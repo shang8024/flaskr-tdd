@@ -942,31 +942,31 @@ tests/app_test.py ......                                                    [100
    
 ![](images/image-5.png)
 
-1. To deploy the project, you need to connect to your GitHub repository by selecting "Build and deploy from a Git repository".
+2. To deploy the project, you need to connect to your GitHub repository by selecting "Build and deploy from a Git repository".
 
 ![](images/image-17.png)
 
-1. Select "connect to GitHub" and authorize Render to access your repositories of choice on GitHub.
+3. Select "connect to GitHub" and authorize Render to access your repositories of choice on GitHub.
 
 ![](images/image-7.png)
 
-1. Connect the repository you want to deploy to Render.
+4. Connect the repository you want to deploy to Render.
 
 ![](images/image-8.png)
 
-1. In Deployment settings, select the branch you want to deploy. In this case, we will deploy the main branch. Configure the Build command to specify the packages required and the Start command to specify the entry for starting the processes (i.e., app.py in the project for Flaskr-tdd).
+5. In Deployment settings, select the branch you want to deploy. In this case, we will deploy the main branch. Configure the Build command to specify the packages required and the Start command to specify the entry for starting the processes (i.e., app.py in the project for Flaskr-tdd).
 
 ![](images/image-9.png)
 
-3. Choose the free plan, you can create the web service on Render
+6. Choose the free plan, you can create the web service on Render
 
 ![](images/image-2.png)
 
-5. Now with the web service created, go to "Environment" to add an environment variable for specifying the Python version. In this case, we will use Python 3.12.0 in Flaskr-tdd project (or the specific Python version you are using for your project)
+7. Now with the web service created, go to "Environment" to add an environment variable for specifying the Python version. In this case, we will use Python 3.12.0 in Flaskr-tdd project (or the specific Python version you are using for your project)
 
 ![](images/image-15.png)
 
-7. The deployment should start automatically. You can check the deployment status in Logs. Once the deployment is completed, you can access the web service by clicking on the URL URL under the project name.
+8. The deployment should start automatically. You can check the deployment status in Logs. Once the deployment is completed, you can access the web service by clicking on the URL URL under the project name.
 
 ![](images/image-13.png)
 ![](images/image-14.png)
@@ -1352,10 +1352,10 @@ Manually test the app as well by running the server and logging in and out, addi
 If all is well, Update the requirements file:
 
 ```
-Flask==3.0.0
-Flask-SQLAlchemy==3.1.1
-gunicorn==21.2.0
-pytest==7.4.2
+Flask
+Flask-SQLAlchemy
+gunicorn
+pytest
 ```
 
 Commit your code, and then push to GitHub!
@@ -1532,19 +1532,19 @@ Test it out locally again. If all is well, commit your code and push to GitHub.
 
 ![](images/image.png)
 
-3. Enter the Name for the Postgres instance and database
+2. Enter the Name for the Postgres instance and database
 
 ![](images/image-1.png)
 
-5. Select the free plan and create the database
+3. Select the free plan and create the database
 
 ![](images/image-2.png)
 
-7. Now you have a Postgres database on Render.
+4. Now you have a Postgres database on Render.
 
 ![](images/image-3.png)
 
-9. Copy the External Database URL and Internal Database URL for later use
+5. Copy the External Database URL and Internal Database URL for later use
 
 ![](images/image-4.png)
 
@@ -1560,23 +1560,23 @@ if url.startswith("postgres://"):
 SQLALCHEMY_DATABASE_URI = url
 ```
 
-3. Set up the DATABASE_URL locally to create the tables in the Postgres database. We will be using the external database URL in the previous steps for connecting and creating tables in the remote database on Render.
+2. Set up the DATABASE_URL locally to create the tables in the Postgres database. We will be using the external database URL in the previous steps for connecting and creating tables in the remote database on Render.
 
 ```sh
 $env:DATABASE_URL="the value of the external database URL you copied earlier"
 ```
 
-5. With the DATABASE_URL set, run db.create_all() locally to create the tables in the Postgres database.
+3. With the DATABASE_URL set, run db.create_all() locally to create the tables in the Postgres database.
 
 ![](images/image-20.png)
 
-7. Run the tests to ensure they still pass locally.
-8. Commit and push your code to the GitHub
-9. Go to the Render dashboard. We need to set up the database for the Flaskr-tdd project. In your web service settings on Render for the application, create an environment variable named DATABASE_URL and set its value to the Internal Database URL saved in the previous step.
+4. Run the tests to ensure they still pass locally.
+5. Commit and push your code to the GitHub
+6. Go to the Render dashboard. We need to set up the database for the Flaskr-tdd project. In your web service settings on Render for the application, create an environment variable named DATABASE_URL and set its value to the Internal Database URL saved in the previous step.
 
 ![](images/image-15.png)
 
-11. The deployment should start automatically upon a new commit. Once the deployment is completed, you can access the web service by clicking on the URL under the project name.
+7. The deployment should start automatically upon a new commit. Once the deployment is completed, you can access the web service by clicking on the URL under the project name.
 
 ![](images/image-19.png)
 
