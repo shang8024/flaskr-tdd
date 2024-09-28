@@ -8,65 +8,16 @@ This repository is adapted from the [upstream project](https://github.com/mjhea0
 
 # Flaskr - Intro to Flask, Test-Driven Development, and JavaScript
 
-As many of you know, Flaskr -- a mini-blog-like-app -- is the app that you build for the official Flask [tutorial](https://flask.palletsprojects.com/en/3.0.x/tutorial/). I've gone through the tutorial more times than I care to admit. Anyway, I wanted to take the tutorial a step further by adding [Test-Driven Development](https://testdriven.io/test-driven-development/) (TDD), a bit of JavaScript, and deployment. This article is that tutorial. Enjoy.
-
-Also, if you're completely new to Flask and/or web development in general, it's important to grasp these basic fundamental concepts:
-
-1. The difference between HTTP GET and POST requests and how functions within the app handle each.
-1. What HTTP "requests" and "responses" are.
-1. How HTML pages are rendered and/or returned to the end user.
-
-> This project is powered by **[TestDriven.io](https://testdriven.io/)**. Please support this open source project by purchasing one of our Flask courses. Learn how to build, test, and deploy microservices powered by Docker, Flask, and React!
-
 ## What you're building
 
 You'll be building a simple blogging app in this tutorial:
 
 ![flaskr app](/flaskr-app.png)
 
-## Changelog
-
-This tutorial was last updated on October 17th, 2023:
-
-- **10/17/2023**:
-  - Updated to Python 3.12.0 and bumped all other dependencies.
-- **06/03/2022**:
-  - Updated to Python 3.10.4 and bumped all other dependencies.
-- **10/14/2020**:
-  - Renamed *app.test.py* to *app_test.py*. (Fixed issue #[58](https://github.com/mjhea0/flaskr-tdd/issues/58).)
-  - Updated to Python 3.9 and bumped all other dependencies.
-  - Added pytest v7.1.2. (Fixed issue #[60](https://github.com/mjhea0/flaskr-tdd/issues/60))
-  - Migrated from `os.path` to `pathlib`.
-- **11/05/2019**:
-  - Updated to Python 3.8.0, Flask 1.1.1, and Bootstrap 4.3.1.
-  - Replaced jQuery with vanilla JavaScript.
-  - Added Black and Flake8.
-  - Used Postgres in production.
-  - Restricted post delete requests.
-- **10/07/2018**: Updated to Python 3.7.0.
-- **05/10/2018**: Updated to Python 3.6.5, Flask 1.0.2, Bootstrap 4.1.1.
-- **10/16/2017**:
-  - Updated to Python 3.6.2.
-  - Updated to Bootstrap 4.
-- **10/10/2017**: Added a search feature.
-- **07/03/2017**: Updated to Python 3.6.1.
-- **01/24/2016**: Updated to Python 3 (v3.5.1)!
-- **08/24/2014**: PEP8 updates.
-- **02/25/2014**: Upgraded to SQLAlchemy.
-- **02/20/2014**: Completed AJAX.
-- **12/06/2013**: Added Bootstrap 3 styles
-- **11/29/2013**: Updated unit tests.
-- **11/19/2013**: Fixed typo. Updated unit tests.
-- **11/11/2013**: Added information on requests.
 
 ## Contents
-
-1. [Test Driven Development?](#test-driven-development)
-1. [Download Python](#download-python)
 1. [Project Setup](#project-setup)
 1. [First Test](#first-test)
-1. [Flaskr Setup](#flaskr-setup)
-1. [Second Test](#second-test)
 1. [Database Setup](#database-setup)
 1. [Templates and Views](#templates-and-views)
 1. [Add Some Style](#add-some-style)
@@ -92,34 +43,6 @@ This tutorial utilizes the following requirements:
 1. Flake8 v6.1.0
 1. Black v23.10.0
 1. pytest v7.4.2
-
-## Test Driven Development?
-
-![tdd](https://raw.githubusercontent.com/mjhea0/flaskr-tdd/master/tdd.png)
-
-Test-Driven Development (TDD) is an iterative development cycle that emphasizes writing automated tests before writing the actual feature or function. Put another way, TDD combines building and testing. This process not only helps ensure correctness of the code -- but also helps to indirectly evolve the design and architecture of the project at hand.
-
-TDD usually follows the "Red-Green-Refactor" cycle, as shown in the image above:
-
-1. Write a test
-1. Run the test (it should fail)
-1. Write just enough code for the test to pass
-1. Refactor code and retest, again and again (if necessary)
-
-> For more, check out [What is Test-Driven Development?](https://testdriven.io/test-driven-development/).
-
-## Download Python
-
-Before beginning make sure you have the latest version of [Python 3.12](https://www.python.org/downloads/release/python-3120/) installed, which you can download from [http://www.python.org/download/](http://www.python.org/download/).
-
-> This tutorial uses Python v3.12.0.
-
-Along with Python, the following tools are also installed:
-
-- [pip](https://pip.pypa.io/en/stable/) - a [package management](http://en.wikipedia.org/wiki/Package_management_system) system for Python, similar to gem or npm for Ruby and Node, respectively.
-- [venv](https://docs.python.org/3/library/venv.html) - used to create isolated environments for development. This is standard practice. Always, always, ALWAYS utilize virtual environments. If you don't, you'll eventually run into problems with dependency conflicts.
-
-> Feel free to swap out virtualenv and Pip for [Poetry](https://python-poetry.org) or [Pipenv](https://github.com/pypa/pipenv). For more, review [Modern Python Environments](https://testdriven.io/blog/python-environments/).
 
 ## Project Setup
 
@@ -160,10 +83,8 @@ Create the following files and folders:
     ├── __init__.py
     └── app_test.py
 ```
-
-While the Python standard library comes with a unit testing framework called ùnittest, [pytest](https://pytest.org/) is the go-to testing framework for testing Python code.
-
-> For more on pytest, check out [Pytest for Beginners](https://testdriven.io/blog/pytest-for-beginners/).
+### pytest
+[pytest](https://pytest.org/) is the go-to testing framework for testing Python code. For more on pytest, check out [Pytest for Beginners](https://testdriven.io/blog/pytest-for-beginners/).
 
 Install it:
 
@@ -1766,3 +1687,12 @@ Test everything out once last time!
 1. Want my code? Grab it [here](https://github.com/mjhea0/flaskr-tdd).
 1. Want more Flask fun? Check out [TestDriven.io](https://testdriven.io/). Learn how to build, test, and deploy microservices powered by Docker, Flask, and React!
 1. Want something else added to this tutorial? Add an issue to the repo.
+
+# Complemtary materials:
+As many of you know, Flaskr -- a mini-blog-like-app -- is the app that you build for the official Flask [tutorial](https://flask.palletsprojects.com/en/3.0.x/tutorial/). I've gone through the tutorial more times than I care to admit. Anyway, I wanted to take the tutorial a step further by adding [Test-Driven Development](https://testdriven.io/test-driven-development/) (TDD), a bit of JavaScript, and deployment. This article is that tutorial. Enjoy.
+
+Also, if you're completely new to Flask and/or web development in general, it's important to grasp these basic fundamental concepts:
+
+1. The difference between HTTP GET and POST requests and how functions within the app handle each.
+1. What HTTP "requests" and "responses" are.
+1. How HTML pages are rendered and/or returned to the end user.
