@@ -1614,10 +1614,6 @@ All done! ✨ 🍰 ✨
 
 Test everything out once last time!
 
-## Conclusion
-
-1. Want more Flask fun? Check out [TestDriven.io](https://testdriven.io/). Learn how to build, test, and deploy microservices powered by Docker, Flask, and React!
-1. Want something else added to this tutorial? Add an issue to the repo.
 
 # Complemtary materials:
 As many of you know, Flaskr -- a mini-blog-like-app -- is the app that you build for the official Flask [tutorial](https://flask.palletsprojects.com/en/3.0.x/tutorial/). I've gone through the tutorial more times than I care to admit. Anyway, I wanted to take the tutorial a step further by adding [Test-Driven Development](https://testdriven.io/test-driven-development/) (TDD), a bit of JavaScript, and deployment. This article is that tutorial. Enjoy.
