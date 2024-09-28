@@ -1,3 +1,11 @@
+# UofT-ECE444-PRA-TDD&Deployment
+This repository is adapted from the [upstream project](https://github.com/mjhea0/flaskr-tdd) and has been customized specifically for use in the course practicum (PRA).
+
+### Summary of updates:
+- Replace Heroku with Render (2024-Sep)
+  
+
+
 # Flaskr - Intro to Flask, Test-Driven Development, and JavaScript
 
 As many of you know, Flaskr -- a mini-blog-like-app -- is the app that you build for the official Flask [tutorial](https://flask.palletsprojects.com/en/3.0.x/tutorial/). I've gone through the tutorial more times than I care to admit. Anyway, I wanted to take the tutorial a step further by adding [Test-Driven Development](https://testdriven.io/test-driven-development/) (TDD), a bit of JavaScript, and deployment. This article is that tutorial. Enjoy.
