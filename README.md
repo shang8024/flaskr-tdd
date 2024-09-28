@@ -38,7 +38,7 @@ This tutorial utilizes the following requirements:
 1. Python v3.12.0
 1. Flask v3.0.0
 1. Flask-SQLAlchemy v3.1.1
-1. Gunicorn v21.2.0
+1. [Gunicorn](https://gunicorn.org/) v21.2.0 (a production-grade WSGI web server)
 1. Psycopg2 v2.9.9
 1. Flake8 v6.1.0
 1. Black v23.10.0
