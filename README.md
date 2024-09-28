@@ -10,7 +10,7 @@ This repository is adapted from the [upstream project](https://github.com/mjhea0
 
 You'll be building a simple blogging app in this tutorial:
 
-![flaskr app](/flaskr-app.png)
+![flaskr app](images/flaskr-app.png)
 
 ## Contents
 1. [Project Setup](#project-setup)
