@@ -39,7 +39,7 @@ This tutorial utilizes the following requirements:
 1. Flask v3.0.0
 1. Flask-SQLAlchemy v3.1.1
 1. [Gunicorn](https://gunicorn.org/) v21.2.0 (a production-grade WSGI web server)
-1. Psycopg2 v2.9.9
+1. [Psycopg2](https://pypi.org/project/psycopg2/) v2.9.9 (a Postgres database adapter for Python)
 1. Flake8 v6.1.0
 1. Black v23.10.0
 1. pytest v7.4.2
@@ -941,7 +941,18 @@ tests/app_test.py ......                                                    [100
 
 ## Deployment
 
-todo
+1. After logging in to Render, go to "Dashboard" to create a web service to deploy the Flaskr-tdd project. 
+[picture]
+1. To deploy the project, you need to connect to your GitHub repository by selecting "Build and deploy from a Git repository".[picture]
+1. Select "connect to GitHub" and authorize Render to access your repositories of choice on GitHub. [picture]
+1. Connect the repository you want to deploy to Render. [picture]
+1. In Deployment settings, select the branch you want to deploy. In this case, we will deploy the main branch. Configure the Build command to specify the packages required and the Start command to specify the entry for starting the processes (i.e., app.py in the project for Flaskr-tdd).
+2. Choose the free plan, you can create the web service on Render
+3. Now with the web service created, go to "Environment" to add an environment variable for specifying the Python version. In this case, we will use Python 3.12.0 in Flaskr-tdd project (or the specific Python version you are using for your project)
+4. The deployment should start automatically. You can check the deployment status in Logs. Once the deployment is completed, you can access the web service by clicking on the URL URL under the project name. 
+ 
+
+
 
 ## Bootstrap
 
@@ -1497,9 +1508,22 @@ def test_delete_message(client):
 
 Test it out locally again. If all is well, commit your code and update the version on Heroku.
 
-## Postgres Heroku
+## Postgres Database on Render 
+### Set up the database
+1. For deployment on Render, we can use [Postgres](https://www.postgresql.org/), which is a production grade database. Render offers Postgres database hosting service for 90 days for free. We will use the Postgres database to store the data for the Flaskr-tdd project. 
+2. Enter the Name for the Postgres instance and database
+3. Select the free plan and create the database
+4. Now you have a Postgres database on Render.
+5. Copy the External Database URL and Internal Database URL for later use 
 
-todo
+### Connect the database to the Flaskr-tdd project 
+1. To use the Postgres database, we need to update the app.py file in the Flaskr-tdd project. In the app.py file, update the SQLALCHEMY_DATABASE_URI variable to use the value of the DATABASE_URL environment variable if it's available. Otherwise, it will use the SQLite URL. (Important: Note: Make sure to import os in the app.py file)
+2. Set up the DATABASE_URL locally to create the tables in the Postgres database. We will be using the external database URL in the previous steps for connecting and creating tables in the remote database on Render.
+3. With the DATABASE_URL set, run db.create_all() locally to create the tables in the Postgres database.
+4. Run the tests to ensure they still pass locally.
+5. Commit and push your code to the GitHub
+6. Go to the Render dashboard. We need to set up the database for the Flaskr-tdd project. In your web service settings on Render for the application, create an environment variable named DATABASE_URL and set its value to the Internal Database URL save in the previous step.
+7. The deployment should start automatically upon a new commit. Once the deployment is completed, you can access the web service by clicking on the URL under the project name. 
 
 ## Linting and Code Formatting
 
